@@ -30,7 +30,7 @@ parser.add_argument('data_mode_test',type=str,help='the mode (i.e., shortcut bia
 parser.add_argument('--feature_extractor_dir',type=str, required=False,default='',help='the path to the directory of a pre-trained model (feature extractor networks) used for obtaining representations; applies to downstream training')
 parser.add_argument('--feature_extractor_config',type=str, required=False,default='',help='the configuration script of the upstream training algorithm; to be used with feature_extractor_dir')
 #parser.add_argument('--extractor_vanilla',default=False, action='store_true',help='whether the feature extractor model has a vanilla structure; can be used with feature_extractor_dir')
-parser.add_argument('--title',type=str, required=False,default='',help='title of this experiment (the default title is based on algorithm and dataset)')
+parser.add_argument('--title',type=str, required=False,default='',help='title of this experiment, used for the results directory (the default title is based on algorithm and dataset)')
 parser.add_argument('--evaluate',    default=False, action='store_true',help='only evaluation on the test data (no training)')
 parser.add_argument('--load_model_path', type=str, required=False,default='',help='the directory from which pre-trained networks are loaded; used if the main model should be intialized from file')
 parser.add_argument('--working_dir',  type=str, required=False, default='',help='parent directory for saving results (overrides the global config)')
