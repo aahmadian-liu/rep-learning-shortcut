@@ -35,8 +35,6 @@ networks['classifier'] = {'def_file': 'architectures.ResNet', 'pretrained': None
 networks['lens'] = {'def_file': 'architectures.Unet', 'pretrained': None, 'opt': config_lens}
 
 config['optim_params_classifier']={'optim_type': 'adam','lr':0.0002,'beta':(0.9, 0.999)}
-#config['optim_params_classifier']={'optim_type': 'adam','lr':0.001,'beta':(0.9, 0.999)}
-#config['optim_params_lens']={'optim_type': 'adam','lr':0.0002,'beta':(0.9, 0.999)}
 config['optim_params_lens']={'optim_type': 'adam','lr':0.002,'beta':(0.9, 0.999)}
 
 config['networks'] = networks
