@@ -1,7 +1,5 @@
 import matplotlib.pyplot as pyplot
 import torchvision.transforms as transforms
-#import biasdata
-#Mask= biasdata.CreateGrMask()
 from numpy.random import default_rng
 rng = default_rng(0)
 from dataloaders.cifar10_with_rotate import rotate_img
@@ -98,53 +96,3 @@ def purenoise(bsize):
     d = d.repeat(bsize // 4, 1, 1, 1)
 
     return d.float().cuda()
-
-
-def purecolor():
-    digcolors = {0: (1, 1, 1), 1: (0.5, 0, 0), 2: (0, 0.5, 0), 3: (0, 0, 0.5), 4: (0.5, 0.5, 0), 5: (0, 0.5, 0.5),
-                 6: (0.5, 0, 0.5), 7: (0.5, 0.5, 0.5), 8: (1, 0, 0.5), 9: (1, 0.5, 1)}
-
-    imgs = []
-
-    transform = transforms.Compose([transforms.ToTensor()])
-
-    for i in range(0, 10):
-        img = np.ones([28, 28, 3])
-        for j in range(0, 3):
-            img[:, :, j] = digcolors[i][j]
-        imgs.append(transform(img))
-
-    d = torch.stack(imgs, dim=0)
-    return d.float().cuda()
-
-
-def showgradnorm(params):
-    gr = 0
-    for p in params:
-        gr += (p.grad ** 2).sum()
-        gr = torch.sqrt(gr)
-
-    print('gr', gr)
-
-
-def weightsheatmap(classlayer, iternum):
-    for p in classlayer.parameters():
-        weights = p.cpu().detach().numpy()
-        break
-
-    weights = np.abs(weights)
-
-    for i in range(0, weights.shape[0]):
-        w = weights[i, :]
-        wm = w.mean()
-        wv = w.std()
-        # u=np.abs(w-wm)/wv
-        # w[u>1]=1
-        # w[u<1]=0
-        # weights[i,:]=(weights[i,:]-wm)/wv
-
-    fig = pyplot.figure()
-    # pyplot.imshow(weights[0:3,:],cmap='Blues')
-    pyplot.hist(weights[2, :])
-
-    fig.savefig("weightplots/iter" + str(iternum) + ".png")
