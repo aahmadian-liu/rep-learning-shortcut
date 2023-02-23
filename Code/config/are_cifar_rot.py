@@ -1,7 +1,7 @@
-# The proposed Adversarial Lens with Random transform (ALR) method for Cifar10 (rotation prediction) experiments  
+# The proposed Adversarial Representation Enhancement (ARE) method for CIFAR10 (rotation prediction) experiments  
 
 config = {}
-config['algorithm']='AdvLensRan'
+config['algorithm']='AdvRepEnhance'
 config['is_downstream_task'] = False
 
 config['max_num_epochs'] = 30
