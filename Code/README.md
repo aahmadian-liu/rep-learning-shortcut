@@ -1,4 +1,4 @@
-**PyTorch implementation of the paper Enhancing Representation Learning with Deep Classifiers in Presence of Shortcut**
+**PyTorch implementation of the paper Enhancing Representation Learning with Deep Classifiers in Presence of Shortcut (A.Ahmadian and F.Lindsten, 2023)**
 
 # Requirements
 torch (1.11)
