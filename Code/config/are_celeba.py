@@ -1,7 +1,7 @@
-# The proposed Adversarial Lens with Random transform (ALR) method for CelebA experiments  
+# The proposed Adversarial Representation Enhancement (ARE) method for CelebA experiments  
 
 config = {}
-config['algorithm']='AdvLensRan'
+config['algorithm']='AdvRepEnhance'
 config['is_downstream_task'] = False
 
 config['max_num_epochs'] = 10
