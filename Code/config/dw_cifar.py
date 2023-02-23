@@ -1,4 +1,4 @@
-# Downstream classification for Cifar10 experiments, used after the proposed ALR method as well as SD and DE
+# Downstream classification for Cifar10 experiments, used after the ARE, SD and DE methods
 # To use with DE, change the feature extractor def_file to 'architectures.Ensemble'
 
 
