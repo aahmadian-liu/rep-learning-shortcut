@@ -18,7 +18,7 @@ import algorithms.Utils as utils
 
 class AdvRepEnhance(Algorithm):
 
-    def __init__(self, opt,run_name="alr"):
+    def __init__(self, opt,run_name="are"):
 
         super().__init__(opt,run_name)
         self.double_phase = False
