@@ -1,4 +1,4 @@
-# Implementation of the paper Enhancing Representation Learning with Deep Classifiers in Presence of Shortcut (A.Ahmadian and F.Lindsten)
+# Implementation of the paper Enhancing Representation Learning with Deep Classifiers in Presence of Shortcut (A.Ahmadian and F.Lindsten, ICASSP2023)
 # amirhossein.ahmadian@liu.se
 # Oct 2022
 # Part of the code is based on https://github.com/gidariss/FeatureLearningRotNet
@@ -100,9 +100,9 @@ with open(os.path.join(globalconf.work_dir, args.title, 'configs.json'), 'w') as
 
 # Loading the required modules and networks for the specified algorithm
 
-if config['algorithm'].startswith('AdvLensRan'):
+if config['algorithm'].startswith('AdvRepEnhance'):
 
-    algorithm= importlib.import_module("algorithms."+config['algorithm']).AdvLensRan(config,args.title)
+    algorithm= importlib.import_module("algorithms."+config['algorithm']).AdvRepEnhance(config,args.title)
 
 elif config['algorithm'].startswith('DiverseEnsemble'):
 
